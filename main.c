@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
 
     if (argc <= 1)
     {
-        printf("No arguments were given. Exiting.");
+        printf("No arguments were given. Exiting.\n");
         return 0;
     }
 
@@ -73,14 +73,14 @@ int main(int argc, char* argv[])
         {
             if (argc != 4)
             {
-                printf("Wrong usage of command.");
+                printf("Wrong usage of command.\n");
                 return -1;
             }
 
             FILE* indices_source = fopen64(argv[3], "r");
             if (indices_source == NULL)
             {
-                printf("Couldn't read file: %s", argv[3]);
+                printf("Couldn't read file: %s\n", argv[3]);
                 return -1;
             }
 
@@ -97,14 +97,14 @@ int main(int argc, char* argv[])
     }
     else
     {
-        printf("No line numbers were given. Exiting.");
+        printf("No line numbers were given. Exiting.\n");
         return 0;
     }
 
     FILE* file = fopen64(argv[1], "r");
     if (file == NULL)
     {
-        printf("Couldn't read file: %s", argv[1]);
+        printf("Couldn't read file: %s\n", argv[1]);
         return -1;
     }
 
@@ -129,7 +129,7 @@ int main(int argc, char* argv[])
         size_t res = fread(buffer, 1, BUFFER_SIZE, file);
         if (ferror(file))
         {
-            printf("Error during reading of file.");
+            printf("Error during reading of file.\n");
             return -1;
         }
 
